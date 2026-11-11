@@ -1,0 +1,15 @@
+{
+  "site": "core",
+  "publicationRepository": "mandolin/HIA-Documentation-Resources-Core",
+  "repository": "mandolin/HIA-Documentation",
+  "commit": "60319b63ee66b59146feddbd183ad07466ad9aba",
+  "registrySha256": "20b851e50490543ca35f1d9dccdf495f138e97daeb482fb353c4c7fb567bb8cb",
+  "tag": "resources-core-60319b6",
+  "asset": "resources-core-60319b6.tar.gz",
+  "files": 57978,
+  "bytes": 759953150,
+  "gzipSha256": "fc0fa30cc9083ff3f208928ea9e0a2653d23f427aba86dfe9e52ca9b57258702",
+  "tarSha256": "70905425109e543a518f84b5f4fc995a1c0d3b0ffc0db48c28fffe7ba884f6c4",
+  "tarBytes": 864593920,
+  "reportSha256": "9c8cad3599d38f7760dc586e2ff57cbf533d51bb2f1dc4b961164d778c46bc95"
+}

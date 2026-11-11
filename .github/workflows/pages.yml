@@ -43,6 +43,21 @@ jobs:
           sparse-checkout: |
             scripts
             reference
+      - name: Restore pinned registry checkout bytes
+        run: |
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          # 中文。只还原Git文本换行，选中的完整字节必须匹配生产时固定摘要。 English. Restore only Git text EOLs; all selected bytes must match the production-pinned digest.
+          registry = Path('build-owner/reference/resource-reference-partitions.json')
+          raw = registry.read_bytes()
+          lf = raw.replace(b'\r\n', b'\n')
+          expected = json.loads(Path('snapshot.json').read_text())['registrySha256']
+          matching = [data for data in (raw, lf, lf.replace(b'\n', b'\r\n')) if hashlib.sha256(data).hexdigest() == expected]
+          if not matching:
+              raise ValueError('Pinned registry checkout bytes unavailable.')
+          registry.write_bytes(matching[0])
+          PY
       - name: Check archive-validation regressions
         run: python3 -m unittest discover -s build-owner/scripts -p test_resource_reference_publication.py
       - name: Download and validate the pinned resource snapshot

@@ -11,6 +11,10 @@ HIA Documentation System generated JSON resource reference. This repository publ
 
 Each partition provides its own bilingual interface, project index, static pages, original JSON snapshots, source maps and source previews. Resource text retains its original language. The code reference navigation opens the [core API site](https://mandolin.github.io/HIA-Documentation-API/zh-CN/).
 
+The core-and-source partition includes `@hia-doc/schemas/project-manifest-scoped.schema.json`, preserving its explicit aggregation-scope contract.
+
+中文。核心及来源分区包含聚合作用域项目清单模式，原始JSON、逐值文档、源码映射和授权源码完整保留。
+
 ## Publication and maintenance
 
 `snapshot.json` pins the source commit, partition registry, release archive and exhaustive build report by SHA-256. Release assets contain generated content. Git history contains publication metadata and maintenance files. The Pages workflow reads the pinned source commit and runs the shared archive-validator tests before verifying and publishing every file.
